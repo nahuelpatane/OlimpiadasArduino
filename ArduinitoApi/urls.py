@@ -10,6 +10,7 @@ router = DefaultRouter()
 router.register(r'temperatura', views.TemperaturaView)
 router.register(r'agua', views.AguaView)
 router.register(r'luz', views.LuzView)
+router.register(r'hora', views.HoraView)
 router.register(r'informacion', views.InformacionView)
 
 urlpatterns = [

@@ -19,3 +19,7 @@ class LuzView(viewsets.ReadOnlyModelViewSet):
 class InformacionView(viewsets.ReadOnlyModelViewSet):
     queryset = models.Informacion.objects.all()
     serializer_class = serializers.InformacionSerializer
+
+class HoraView(viewsets.ReadOnlyModelViewSet):
+    queryset = models.Hora.objects.all()
+    serializer_class = serializers.HoraSerializer

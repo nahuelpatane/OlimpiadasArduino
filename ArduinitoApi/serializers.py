@@ -42,14 +42,24 @@ class LuzSerializer(DynamicFieldsModelSerializer):
             'url': {'view_name': 'luz-detail', 'lookup_field': 'url'},
         }
 
-class InformacionSerializer(DynamicFieldsModelSerializer):
+class HoraSerializer(DynamicFieldsModelSerializer):
     temperatura = TemperaturaSerializer()
     agua = AguaSerializer()
     luz = LuzSerializer()
 
     class Meta:
+        model = models.Hora
+        fields = ('id_hora', 'hora', 'temperatura', 'agua', 'luz')
+        extra_kwargs = {
+            'url': {'view_name': 'hora-detail', 'lookup_field': 'url'},
+        }
+
+class InformacionSerializer(DynamicFieldsModelSerializer):
+    hora = HoraSerializer()
+
+    class Meta:
         model = models.Informacion
-        fields = ('id_info', 'fecha', 'hora', 'temperatura', 'agua', 'luz')
+        fields = ('id_info', 'fecha', 'hora')
         extra_kwargs = {
             'url': {'view_name': 'informacion-detail', 'lookup_field': 'url'},
         }
