@@ -24,7 +24,7 @@ class Luz(models.Model):
     estado= models.NullBooleanField(default=False, blank=True,null=True)
 
 class Informacion(models.Model):
-    id_tem = models.AutoField(primary_key=True)
+    id_info = models.AutoField(primary_key=True)
     fecha= models.DateField("fecha")
     hora= models.TimeField()
     temperatura = models.ForeignKey(Temperatura, on_delete=models.CASCADE)

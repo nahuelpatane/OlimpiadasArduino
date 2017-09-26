@@ -9,19 +9,19 @@ class Temperatura(models.Model):
     id_temp = models.AutoField(primary_key=True)
     valor= models.IntegerField("valor", null=False)
     unidad= models.CharField(max_length=32, default="°C")
-    estado= models.BooleanField(default=False, blank=True,null=True)
+    estado= models.NullBooleanField(default=False, blank=True,null=True)
 
 class Agua(models.Model):
     id_agua = models.AutoField(primary_key=True)
     valor= models.IntegerField("valor", null=False)
     unidad= models.CharField(max_length=32, default="l")
-    estado= models.BooleanField(default=False, blank=True,null=True)
+    estado= models.NullBooleanField(default=False, blank=True,null=True)
 
 class Luz(models.Model):
     id_luz = models.AutoField(primary_key=True)
     valor= models.IntegerField("valor", null=False)
     unidad= models.CharField(max_length=32, default="lm")
-    estado= models.BooleanField(default=False, blank=True,null=True)
+    estado= models.NullBooleanField(default=False, blank=True,null=True)
 
 class Informacion(models.Model):
     id_tem = models.AutoField(primary_key=True)
