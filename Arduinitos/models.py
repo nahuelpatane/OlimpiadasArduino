@@ -23,10 +23,16 @@ class Luz(models.Model):
     unidad= models.CharField(max_length=32, default="lm")
     estado= models.NullBooleanField(default=False, blank=True,null=True)
 
-class Informacion(models.Model):
-    id_info = models.AutoField(primary_key=True)
-    fecha= models.DateField("fecha")
+class Hora(models.Model):
+    id_hora = models.AutoField(primary_key=True)
     hora= models.TimeField()
     temperatura = models.ForeignKey(Temperatura, on_delete=models.CASCADE)
     agua = models.ForeignKey(Agua, on_delete=models.CASCADE)
     luz = models.ForeignKey(Luz, on_delete=models.CASCADE)
+
+class Informacion(models.Model):
+    id_info = models.AutoField(primary_key=True)
+    fecha= models.DateField("fecha")
+    hora = models.ForeignKey(Hora, on_delete=models.CASCADE)
+
+
