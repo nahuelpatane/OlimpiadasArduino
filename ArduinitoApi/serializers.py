@@ -37,7 +37,7 @@ class LuzSerializer(DynamicFieldsModelSerializer):
 
     class Meta:
         model = models.Luz
-        fields = ('id_Luz', 'valor', 'unidad', 'estado')
+        fields = ('id_luz', 'valor', 'unidad', 'estado')
         extra_kwargs = {
             'url': {'view_name': 'luz-detail', 'lookup_field': 'url'},
         }
